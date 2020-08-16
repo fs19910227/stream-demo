@@ -72,6 +72,18 @@ public abstract class BaseConverter<From, To> implements Converter<From, To> {
      */
     @Override
     public List<To> convert(List<From> fromList, Converter<From, To> converter) {
+        return convert(fromList, converter, exceptionProcessor);
+    }
+
+    /**
+     * 列表转换
+     * 使用默认的转换方法
+     *
+     * @param fromList           source 列表
+     * @param exceptionProcessor 异常处理器
+     * @return
+     */
+    public List<To> convert(List<From> fromList, ExceptionProcessor<ConvertExceptionInfo> exceptionProcessor) {
         return convert(fromList, this::doConvert, exceptionProcessor);
     }
 

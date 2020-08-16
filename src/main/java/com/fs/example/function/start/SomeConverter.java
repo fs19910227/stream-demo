@@ -1,7 +1,6 @@
-package com.fs.example.function.convert;
+package com.fs.example.function.start;
 
-import com.fs.example.function.start.FromType;
-import com.fs.example.function.start.ToType;
+import com.fs.example.function.convert.BaseConverter;
 
 /**
  * 实例 converter
@@ -19,7 +18,6 @@ public class SomeConverter extends BaseConverter<FromType, ToType> {
     protected ToType doConvert(FromType fromType) {
         return null;
     }
-
 
     /**
      * 自定义转换器

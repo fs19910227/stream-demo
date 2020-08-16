@@ -1,7 +1,6 @@
 package com.fs.example.function.start;
 
 import com.fs.example.function.convert.ConverterBuilder;
-import com.fs.example.function.convert.SomeConverter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,7 +30,9 @@ public class Main {
         //多实例 默认实现 使用默认的转换器
         someConverter.convert(listSource);
         //多实例 匿名 lambda 传入指定的converter
-        someConverter.convert(listSource, from -> new ToType());
+        someConverter.convert(listSource, fromType -> {
+            return new ToType();
+        });
         //多实例 使用指定的converter方法
         List<ToType> convert = someConverter.convert(listSource, someConverter::convertForList);
         //多实例 使用默认的convert方法，指定异常处理器
